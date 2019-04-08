@@ -1,0 +1,12 @@
+{
+  "name": "mlee/328/dating",
+  "authors": [
+    {
+      "name": "Max Lee",
+      "email": "mlee77@greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
