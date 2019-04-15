@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //TUrn on error reporting
 ini_set('display_errors', true);
@@ -15,6 +16,12 @@ $f3->route('GET /', function () {
     //echo '<h1>Hello World!</h1>';
     $view = new Template();
     echo $view->render('views/home.html');
+});
+
+$f3->route('GET /personal-info', function () {
+    //echo '<h1>Hello World!</h1>';
+    $view = new Template();
+    echo $view->render('views/per-info.html');
 });
 
 //Run fat-free
