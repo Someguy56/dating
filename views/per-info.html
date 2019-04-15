@@ -19,8 +19,8 @@
 </ul>
 <hr>
 
-<div class="container">
-    <div class="row border rounded">
+<div class="container border rounded">
+    <div class="row">
         <div class="col-sm-12">
             <h1>Personal Information</h1>
 
@@ -41,12 +41,47 @@
                     <input type="text" class="form-control" name="age">
                 </label>
             </div>
+        </div>
+    </div>
 
+    <div id="radioBtns" class="row">
+        <div class="col-sm-12">
+            <p><strong>Gender</strong></p>
+        </div>
+        <div class="col-sm-1">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gender" value="male">
+                    Male
+                </label>
+            </div>
+        </div>
+
+        <div class="col-sm-1">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gender" value="female">
+                    Female
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
             <div class="form-group">
                 <label><strong>Phone Number</strong>
                     <input type="text" class="form-control" name="phone">
                 </label>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="../views/profile.html" method="post">
+                <button type="submit" class="btn btn-primary float-right btnBtmMar">Next ></button>
+            </form>
         </div>
     </div>
 </div>
