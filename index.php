@@ -13,15 +13,24 @@ $f3 = Base::instance();
 
 //define a default route
 $f3->route('GET /', function () {
-    //echo '<h1>Hello World!</h1>';
     $view = new Template();
     echo $view->render('views/home.html');
 });
 
 $f3->route('GET /personal-info', function () {
-    //echo '<h1>Hello World!</h1>';
     $view = new Template();
     echo $view->render('views/per-info.html');
+});
+
+$f3->route('POST /profile', function () {
+    $_SESSION['first'] = $_POST['first'];
+    $_SESSION['last'] = $_POST['last'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['phone'] = $_POST['phone'];
+
+    $view = new Template();
+    echo $view->render('views/profile.html');
 });
 
 //Run fat-free
