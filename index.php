@@ -1,12 +1,13 @@
-<!--
+<?php
+session_start();
+
+/*
     Author: Max Lee
     Version: 2.0
     Date: 4/19/19
 
     Index page used for routing the other pages and store session data.
--->
-<?php
-session_start();
+ */
 
 //TUrn on error reporting
 ini_set('display_errors', true);
