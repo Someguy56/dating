@@ -12,10 +12,45 @@
     margin-top: 20px;
 }
 
-#profile-btn {
+#cats {
+    margin-top: 20px;
+}
+
+#radioBtns {
+    margin-bottom: 10px;
+}
+
+.bottomMargin {
     margin-bottom: 20px;
 }
 
-#cats {
-    margin-top: 20px;
+.checkInterests {
+    padding-left: 30px;
+}
+
+.noBottomMargin {
+    margin-bottom: 5px;
+}
+
+#profileSum {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 100%;
+}
+
+#note {
+    margin-top: 23px;
+}
+
+#profilePic {
+    margin-bottom: 10px;
+}
+
+.row {
+    padding-top: 10px;
 }

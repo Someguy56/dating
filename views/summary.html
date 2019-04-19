@@ -22,9 +22,31 @@
 <div class="container border rounded">
     <div class="row">
         <div class="col-sm-6">
+            <div id="profileSum" class="border rounded">
+                <p>Name: {{$_SESSION['first']}} {{$_SESSION['last']}}</p>
+                <hr>
+                <p>Gender: {{$_SESSION['gender']}}</p>
+                <hr>
+                <p>Age: {{$_SESSION['age']}}</p>
+                <hr>
+                <p>Phone: {{$_SESSION['phone']}}</p>
+                <hr>
+                <p>Email: {{$_SESSION['email']}}</p>
+                <hr>
+                <p>State: {{$_SESSION['state']}}</p>
+                <hr>
+                <p>Seeking: {{$_SESSION['seeking']}}</p>
+                <hr>
+                <p>Interests: {{implode($_SESSION['indoor'])}}{{implode($_SESSION['outdoor'])}}</p>
+            </div>
         </div>
 
         <div class="col-sm-6">
+            <div class="text-center">
+                <img id="profilePic" src="images/profilePic.PNG" alt="profile picture">
+            </div>
+            <h4>Biography</h4>
+            <p class="text-center">{{$_SESSION['bio']}}</p>
         </div>
     </div>
 

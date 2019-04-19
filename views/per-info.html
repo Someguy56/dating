@@ -12,6 +12,7 @@
     <title>Personal Information</title>
 </head>
 <body>
+
 <ul class="nav">
     <li class="nav-item">
         <a id="nav-text" class="nav-link"  href="../dating">Kitty Dating Website</a>
@@ -19,72 +20,82 @@
 </ul>
 <hr>
 
-<div class="container border rounded">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Personal Information</h1>
-            <hr>
+<form action="profile" method="post">
+    <div class="container border rounded">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Personal Information</h1>
+                <hr>
+            </div>
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label><strong>First Name</strong>
+                        <input type="text" class="form-control" name="first">
+                    </label>
+                </div>
 
-            <div class="form-group">
-                <label><strong>First Name</strong>
-                    <input type="text" class="form-control" name="first">
-                </label>
+                <div class="form-group">
+                    <label><strong>Last Name</strong>
+                        <input type="text" class="form-control" name="last">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Age</strong>
+                        <input type="text" class="form-control" name="age">
+                    </label>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label><strong>Last Name</strong>
-                    <input type="text" class="form-control" name="last">
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label><strong>Age</strong>
-                    <input type="text" class="form-control" name="age">
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <div id="radioBtns" class="row">
-        <div class="col-sm-12">
-            <p><strong>Gender</strong></p>
-        </div>
-        <div class="col-sm-1">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="male">
-                    Male
-                </label>
+            <div class="col-sm-3">
+                <div id="note" class="border rounded alert alert-secondary">
+                    <p class="noBottomMargin"><strong>Note:</strong> All information entered is protected
+                        by our privacy policy. Profile information can only be viewed by others
+                        with your permission.</p>
+                </div>
             </div>
         </div>
 
-        <div class="col-sm-1">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gender" value="female">
-                    Female
-                </label>
+        <div id="radioBtns" class="row">
+            <div class="col-sm-12">
+                <p class="noBottomMargin"><strong>Gender</strong></p>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gender" value="Male">
+                        Male
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="gender" value="Female">
+                        Female
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="form-group">
-                <label><strong>Phone Number</strong>
-                    <input type="text" class="form-control" name="phone">
-                </label>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label><strong>Phone Number</strong>
+                        <input type="text" class="form-control" name="phone">
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <form action="profile" method="post">
+        <div class="row">
+            <div class="col-sm-12">
                 <button type="submit" class="btn btn-primary float-right bottomMargin">Next ></button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</form>
+
 </body>
 </html>

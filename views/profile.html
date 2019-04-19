@@ -12,6 +12,7 @@
     <title>Profile</title>
 </head>
 <body>
+
 <ul class="nav">
     <li class="nav-item">
         <a id="nav-text" class="nav-link"  href="../dating">Kitty Dating Website</a>
@@ -19,71 +20,71 @@
 </ul>
 <hr>
 
-<div class="container border rounded">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Profile</h1>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label><strong>Email</strong>
-                    <input type="email" class="form-control" name="email">
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label><strong>State</strong>
-                    <select class="form-control" name="state">
-                        <option value="WA">WASHINGTON</option>
-                        <option value="CA">CALIFORNIA</option>
-                    </select>
-                </label>
+<form action="interests" method="post">
+    <div class="container border rounded">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Profile</h1>
+                <hr>
             </div>
         </div>
 
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label><strong>Biography</strong>
-                    <textarea class="form-control" name="bio"></textarea>
-                </label>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label><strong>Email</strong>
+                        <input type="email" class="form-control" name="email">
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>State</strong>
+                        <select class="form-control" name="state">
+                            <option value="WA">WASHINGTON</option>
+                            <option value="CA">CALIFORNIA</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label><strong>Biography</strong>
+                        <textarea class="form-control" name="bio" rows="4"></textarea>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="radioBtns" class="row">
-        <div class="col-sm-12">
-            <p><strong>Seeking</strong></p>
-        </div>
-        <div class="col-sm-1">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="seeking" value="male">
-                    Male
-                </label>
+        <div id="radioBtns" class="row">
+            <div class="col-sm-12">
+                <p class="noBottomMargin"><strong>Seeking</strong></p>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="seeking" value="Male">
+                        Male
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-1">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="seeking" value="Female">
+                        Female
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="col-sm-1">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="seeking" value="female">
-                    Female
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form action="interests" method="post">
+        <div class="row">
+            <div class="col-sm-12">
                 <button type="submit" class="btn btn-primary float-right bottomMargin">Next ></button>
-            </form>
+            </div>
         </div>
     </div>
-</div>
+</form>
 </body>
 </html>
