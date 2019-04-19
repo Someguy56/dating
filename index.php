@@ -1,3 +1,10 @@
+<!--
+    Author: Max Lee
+    Version: 2.0
+    Date: 4/19/19
+
+    Index page used for routing the other pages and store session data.
+-->
 <?php
 session_start();
 
@@ -17,7 +24,7 @@ $f3->route('GET /', function () {
     echo $view->render('views/home.html');
 });
 
-$f3->route('GET /personal-info', function () {
+$f3->route('POST /personal-info', function () {
     $view = new Template();
     echo $view->render('views/per-info.html');
 });
