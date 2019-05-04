@@ -30,23 +30,54 @@ $f3->route('GET /', function () {
     echo $view->render('views/home.html');
 });
 
-$f3->route('POST /personal-info', function () {
+$f3->route('GET|POST /personal-info', function ($f3)
+{
+    if(!empty($_POST)) {
+        //Get data from form
+        $first = $_POST['first'];
+        $last = $_POST['last'];
+        $age = $_POST['age'];
+        $gender = $_POST['gender'];
+        $phone = $_POST['phone'];
+
+        //Add data to hive
+        $f3->set('first', $first);
+        $f3->set('last', $last);
+        $f3->set('age', $age);
+        $f3->set('gender', $gender);
+        $f3->set('phone', $phone);
+        //If data is valid
+        if (validateFirstForm()) {
+            //Write data to Session
+            $_SESSION['first'] = $first;
+            $_SESSION['last'] = $last;
+            $_SESSION['age'] = $age;
+            $_SESSION['phone'] = $phone;
+
+            if (empty($gender)) {
+                $_SESSION['gender'] = "No gender selected";
+            }
+            else {
+                $_SESSION['gender'] = $gender;
+            }
+            //Redirect to Summary
+            $f3->reroute('/profile');
+        }
+    }
+
     $view = new Template();
     echo $view->render('views/per-info.html');
 });
 
-$f3->route('POST /profile', function () {
-    $_SESSION['first'] = $_POST['first'];
-    $_SESSION['last'] = $_POST['last'];
-    $_SESSION['age'] = $_POST['age'];
-    $_SESSION['gender'] = $_POST['gender'];
-    $_SESSION['phone'] = $_POST['phone'];
+$f3->route('GET|POST /profile', function ()
+{
+
 
     $view = new Template();
     echo $view->render('views/profile.html');
 });
 
-$f3->route('POST /interests', function () {
+$f3->route('GET|POST /interests', function () {
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['state'] = $_POST['state'];
     $_SESSION['bio'] = $_POST['bio'];
@@ -56,7 +87,7 @@ $f3->route('POST /interests', function () {
     echo $view->render('views/interests.html');
 });
 
-$f3->route('POST /summary', function () {
+$f3->route('GET|POST /summary', function () {
     $_SESSION['indoor'] = $_POST['indoor'];
     $_SESSION['outdoor'] = $_POST['outdoor'];
 

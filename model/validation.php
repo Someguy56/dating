@@ -5,15 +5,15 @@ function validateFirstForm()
     $isValid = true;
     if (!validName($f3->get('first'))) {
         $isValid = false;
-        $f3->set("errors['first']", "Please enter a first name");
+        $f3->set("errors['first']", "Please enter a valid first name");
     }
     if (!validName($f3->get('last'))) {
         $isValid = false;
-        $f3->set("errors['last']", "Please enter a last name");
+        $f3->set("errors['last']", "Please enter a valid last name");
     }
     if (!validAge($f3->get('age'))) {
         $isValid = false;
-        $f3->set("errors['age']", "Please enter age 18 to 118");
+        $f3->set("errors['age']", "Please enter an age 18 to 118");
     }
     if (!validPhone($f3->get('phone'))) {
         $isValid = false;
