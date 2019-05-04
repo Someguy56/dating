@@ -15,9 +15,14 @@ error_reporting(E_ALL);
 
 //Require autoload file
 require_once('vendor/autoload.php');
+require_once ('model/validation.php');
 
 //Create an instance of the Base class
 $f3 = Base::instance();
+
+//Make arrays of interests to validate against
+$f3->set("indoorInterests", ['tv', 'puzzles', 'movies', 'reading', 'cooking', 'playing cards', 'board games', 'video games']);
+$f3->set("outdoorInterests", ['hiking', 'walking', 'biking', 'climbing', 'swimming', 'collecting']);
 
 //define a default route
 $f3->route('GET /', function () {
