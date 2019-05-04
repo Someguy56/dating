@@ -1,4 +1,9 @@
 <?php
+
+/*
+ * Used to validate the first form the per-info.html page
+ * Checks first and last name, age, and phone number
+ */
 function validateFirstForm()
 {
     global $f3;
@@ -22,6 +27,10 @@ function validateFirstForm()
     return $isValid;
 }
 
+/*
+ * Validates the second page the profile.html page
+ * Checks the email
+ */
 function validateSecondForm()
 {
     global $f3;
@@ -33,6 +42,10 @@ function validateSecondForm()
     return $isValid;
 }
 
+/*
+ * Validates the third form the interests.html page
+ * Checks indoor and outdoor interests
+ */
 function validateInterestsForm()
 {
     global $f3;
@@ -48,26 +61,31 @@ function validateInterestsForm()
     return $isValid;
 }
 
+//Checks the name is a valid string
 function validName($name)
 {
     return !empty($name) && ctype_alpha($name);
 }
 
+//Checks if the age is over 18 and less than 118
 function validAge($age)
 {
     return !empty($age) && ctype_digit($age) && (int)$age >= 18 && (int)$age <= 118;
 }
 
+//Checks if the phone number is numeric and 10 numbers
 function validPhone($phone)
 {
     return ctype_digit($phone) && strlen($phone) === 10;
 }
 
+//validates the email using filter_var
 function validEmail($email)
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
+//checks if the outdoor interests were valid selections or if any were selected at all
 function validOutdoor($outdoor)
 {
     global $f3;
@@ -86,6 +104,7 @@ function validOutdoor($outdoor)
     return true;
 }
 
+//checks if the indoor interests were valid selections or if any were selected at all
 function validIndoor($indoor)
 {
     global $f3;
