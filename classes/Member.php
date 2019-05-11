@@ -1,11 +1,3 @@
-<!--
-    Author: Max Lee
-    Version: 1.0
-    Date: 5/9/19
-
-    Member class for my dating website
--->
-
 <?php
 
 /**
@@ -208,3 +200,4 @@ class Member
         $this->_bio = $bio;
     }
 }
+?>

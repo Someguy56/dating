@@ -1,11 +1,3 @@
-<!--
-    Author: Max Lee
-    Version: 1.0
-    Date: 5/9/19
-
-    PremiumMember class for my dating website, like a member but can have interests
--->
-
 <?php
 
 /**
@@ -60,3 +52,4 @@ class PremiumMember extends Member
         $this->_outDoorInterests = $outDoorInterests;
     }
 }
+?>
