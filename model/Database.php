@@ -94,11 +94,11 @@ class Database
 
         if($member instanceof PremiumMember)
         {
-            $statement->bindParam(':premium', true, PDO::PARAM_INT);
+            $statement->bindParam(':premium', $b=true, PDO::PARAM_BOOL);
         }
         else
         {
-            $statement->bindParam(':premium', false, PDO::PARAM_INT);
+            $statement->bindParam(':premium', $b=false, PDO::PARAM_BOOL);
         }
 
         $statement->execute();
@@ -125,18 +125,16 @@ class Database
      */
     private function insertInterest($interest, $lastMemberID)
     {
-        $sqlInterests = "INSERT INTO member_interest(member_id, interest_id) 
-                VALUES (:member_id, :interest_id)";
-        $statementInterest = $this->_dbh->prepare($sqlInterests);
-        $statementInterest->bindParam(':member_id', $lastMemberID, PDO::PARAM_INT);
-
         $sqlIntID = "SELECT interest_id FROM interest WHERE interest = :interest";
         $statementIntID = $this->_dbh->prepare($sqlIntID);
         $statementIntID->bindParam(':interest', $interest, PDO::PARAM_STR);
         $statementIntID->execute();
         $intID = $statementIntID->fetch(PDO::FETCH_NUM);
 
-        $statementInterest->bindParam(':interest_id', $intID, PDO::PARAM_INT);
+        $sqlInterests = "INSERT INTO member_interest(member_id, interest_id) VALUES (:member_id, :interest_id)";
+        $statementInterest = $this->_dbh->prepare($sqlInterests);
+        $statementInterest->bindParam(':member_id', $lastMemberID, PDO::PARAM_INT);
+        $statementInterest->bindParam(':interest_id', $intID[0], PDO::PARAM_INT);
         $statementInterest->execute();
     }
 

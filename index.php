@@ -180,8 +180,9 @@ $f3->route('GET|POST /interests', function ($f3)
     echo $view->render('views/interests.html');
 });
 
-$f3->route('GET|POST /summary', function ()
+$f3->route('GET|POST /summary', function ($f3)
 {
+    $f3->set("member", $_SESSION['member']);
     global $db;
     $db->insertMember();
 
