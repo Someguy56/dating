@@ -32,6 +32,8 @@ $f3->route('GET /', function () {
     echo $view->render('views/home.html');
 });
 
+$db = new Database();
+
 $f3->route('GET|POST /personal-info', function ($f3)
 {
     if(!empty($_POST)) {
@@ -131,8 +133,6 @@ $f3->route('GET|POST /profile', function ($f3)
                 $f3->reroute('/interests');
             }
 
-            $_SESSION['member']->setInDoorInterests(['no indoor interests']);
-            $_SESSION['member']->setOutDoorInterests(['no outdoor interests']);
             $f3->reroute('/summary');
         }
     }
@@ -182,6 +182,9 @@ $f3->route('GET|POST /interests', function ($f3)
 
 $f3->route('GET|POST /summary', function ()
 {
+    global $db;
+    $db->insertMember();
+
     $view = new Template();
     echo $view->render('views/summary.html');
 });
