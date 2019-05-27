@@ -144,7 +144,7 @@ class Database
      */
     function getMembers()
     {
-        $sql = "SELECT * FROM member";
+        $sql = "SELECT * FROM member ORDER BY lname";
 
         $statement = $this->_dbh->prepare($sql);
 

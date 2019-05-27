@@ -190,6 +190,11 @@ $f3->route('GET|POST /summary', function ($f3)
     echo $view->render('views/summary.html');
 });
 
+$f3->route('GET|POST /admin', function() {
+    $view = new Template();
+    echo $view->render('views/admin.html');
+});
+
 //Run fat-free
 $f3->run();
 ?>
