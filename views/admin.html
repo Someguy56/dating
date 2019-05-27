@@ -46,7 +46,22 @@
                 </thead>
 
                 <tbody>
-
+                    <repeat group="{{@members}}" key="{{@key}}" value="{{@value}}">
+                        <tr>
+                            <td>{{@value['member_id']}}</td>
+                            <td>{{@value['fname']}} {{@value['lname']}}</td>
+                            <td>{{@value['age']}}</td>
+                            <td>{{@value['phone']}}</td>
+                            <td>{{@value['email']}}</td>
+                            <td>{{@value['state']}}</td>
+                            <td>{{@value['gender']}}</td>
+                            <td>{{@value['seeking']}}</td>
+                            <td><input type="checkbox" readonly <check if="{{@value['premium'] == 1}}">checked</check>></td>
+                            <check if="{{@value['premium'] == 1}}">
+                                <td>{{implode(', ', @db->getInterests(@value['member_id']))}}</td>
+                            </check>
+                        </tr>
+                    </repeat>
                 </tbody>
             </table>
         </div>

@@ -190,7 +190,11 @@ $f3->route('GET|POST /summary', function ($f3)
     echo $view->render('views/summary.html');
 });
 
-$f3->route('GET|POST /admin', function() {
+$f3->route('GET|POST /admin', function($f3)
+{
+    global $db;
+    $f3->set('db', $db);
+    $f3->set('members', $db->getMembers());
     $view = new Template();
     echo $view->render('views/admin.html');
 });

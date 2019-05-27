@@ -106,13 +106,16 @@ class Database
         if($member instanceof PremiumMember)
         {
             $lastMemberID = $this->_dbh->lastInsertId();
-            foreach ($member->getOutDoorInterests() as $interest)
-            {
-                $this->insertInterest($interest, $lastMemberID);
+            if(!empty($member->getOutDoorInterests())) {
+                foreach ($member->getOutDoorInterests() as $interest) {
+                    $this->insertInterest($interest, $lastMemberID);
+                }
             }
-            foreach ($member->getInDoorInterests() as $interest)
-            {
-                $this->insertInterest($interest, $lastMemberID);
+            if(!empty($member->getInDoorInterests())) {
+                foreach ($member->getInDoorInterests() as $interest)
+                {
+                    $this->insertInterest($interest, $lastMemberID);
+                }
             }
         }
     }
@@ -184,7 +187,18 @@ class Database
         $statement->bindParam(':member_id', $member_id, PDO::PARAM_STR);
 
         $statement->execute();
-        $row = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $row;
+        $row = $statement->fetchAll(PDO::FETCH_NUM);
+        $interests = [];
+        foreach ($row as $item)
+        {
+            array_push($interests, $item[0]);
+        }
+
+        if(empty($interests))
+        {
+            array_push($interests, "No interests selected");
+        }
+        //print_r($interests);
+        return $interests;
     }
 }
